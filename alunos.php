@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--CSS-->
-        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="index2.css">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         <!--Icone-->
         <link rel="apple-touch-icon" sizes="180x180" href="img">
@@ -15,9 +15,9 @@
         <title>Alunos</title>
     </head>
     <body>
-        <div class="retorna">
-            <a href="index.php" class="menu-link"><button>Retornar</button></a>
-        </div>
+    <div class="retornar">
+            <a href="index.php" class="menu-link"><button>Home</button></a>
+        </div>      
         <div class="container">
             <div class="hamburguer">
                 <div class="line" id="line1"></div>
@@ -66,4 +66,5 @@
                     </div>
                 </footer>
     </body>
+    <script src="script.js"></script>
 </html>

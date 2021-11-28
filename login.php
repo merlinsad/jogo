@@ -50,7 +50,7 @@
                     <label for="senha" class="label_input">Senha</label>
                 </div>
                 <br><br>
-                <input type="submit" name="submit" id="submit" a href="jogar.php">
+                <input type="submit" name="submit" id="submit" a href="jogar.p">
                 <br><br>
             </fieldset>
         </form>

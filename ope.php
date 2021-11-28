@@ -27,7 +27,7 @@ header('location:jogar.php');
 else{
   unset ($_SESSION['email']);
   unset ($_SESSION['senha']);
-
+  echo "<script type='text/javascript'>alert('Email ou senha errados, tente novamente');</script>";
   header('login.php');
   }
 ?>
@@ -40,7 +40,7 @@ else{
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--CSS-->
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index2.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <!--Icone-->
     <link rel="apple-touch-icon" sizes="180x180" href="img">
@@ -138,7 +138,7 @@ else{
             ganhador=0
         }
         
-        /*document.getElementById("jogador-escolha-1").classList.remove('selecionado')
+        document.getElementById("jogador-escolha-1").classList.remove('selecionado')
         document.getElementById("jogador-escolha-2").classList.remove('selecionado')
         document.getElementById("jogador-escolha-3").classList.remove('selecionado')
         document.getElementById("computador-escolha-1").classList.remove('selecionado')
@@ -146,7 +146,7 @@ else{
         document.getElementById("computador-escolha-3").classList.remove('selecionado')
 
         document.getElementById("jogador-escolha-" + jogador_escolha).classList.add('selecionado')
-        document.getElementById("computador-escolha-" + computador_escolha).classList.add('selecionado')*/
+        document.getElementById("computador-escolha-" + computador_escolha).classList.add('selecionado')
 
         if(ganhador == 0){
             document.getElementById("mensagens").innerHTML = 'Empate'

@@ -380,11 +380,10 @@ ul#jogador_escolha li a img, ul#computador_escolha li a img{
     border-radius: 5px;
     box-shadow: 0 0.1rem 0.6rem #00000009;
 }
-
 .retornar{
     position: absolute;
-    top: 30%;
-    left: 15%;
+    top: 2%;
+    left: 2%;
 }
 .retornar h1{
     color: #ffffff;
