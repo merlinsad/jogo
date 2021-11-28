@@ -10,8 +10,9 @@
         $data_nasc = $_POST['data'];
         $cidade = $_POST['cidade'];
         $estado = $_POST['estado'];
+        $senha = $_POST['senha'];
 
-        $result = mysqli_query($conexao, "INSERT INTO usuarios(nome, email, telefone, data_nasc, cidade, estado) VALUES ('$nome', '$email', '$telefone', '$data_nasc', '$cidade', '$estado')");
+        $result = mysqli_query($conexao, "INSERT INTO usuarios(nome, email, telefone, data_nasc, cidade, estado, senha) VALUES ('$nome', '$email', '$telefone', '$data_nasc', '$cidade', '$estado', '$senha')");
     }
 ?>
 
@@ -28,11 +29,11 @@
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/mavefavicon.png">
     <link rel="manifest" href="/site.webmanifest">
-    <title>Cadastro de usuário</title>
+    <title>Cadastro</title>
 </head>
 <body>
     <ul>
-        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.php">Home</a></li>
     </ul>
     <div class="box">
         <form action="inserirCadastro.php" method="POST">
@@ -67,6 +68,11 @@
                 <div class="inputBox">
                     <input type="text" name="estado" id="estado" class="input_user" required>
                     <label for="estado" class="label_input">Estado</label>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="text" name="senha" id="senha" class="input_user" required>
+                    <label for="senha" class="label_input">Senha</label>
                 </div>
                 <br><br>
                 <input type="submit" name="submit" id="submit">

@@ -137,3 +137,29 @@ label{
 #submit:hover{
     opacity: 0.8;
 }
+
+.retornar p{
+    font-family: var(--font-secundary);
+    color: #fff;
+    font-size: 2rem;
+    text-shadow: .2rem .2rem rgba(0, 0, 0, .4);
+    margin-bottom: 2rem;
+    animation:  moveBanner 1s 0.7s forwards;
+    opacity: 0;
+    text-align: justify;
+}
+.retornar button{
+    font-family: var(--font-action);
+    color: #fff;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    background: #159957;  
+    background: -webkit-linear-gradient(to right, #155799, #159957);  
+    background: linear-gradient(to left, #155799, #159957); 
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    animation:  moveBanner 1s 0.9s forwards;
+    opacity: 0;
+}

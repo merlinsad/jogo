@@ -11,7 +11,7 @@
         $cidade = $_POST['cidade'];
         $estado = $_POST['estado'];
 
-        $result = mysqli_query($conexao, "INSERT INTO usuarios(nome, email, telefone, data_nasc, cidade, estado) VALUES ('$nome', '$email', '$telefone', '$data_nasc', '$cidade', '$estado')");
+        $result = mysqli_query($conexao, "INSERT INTO usuarios(nome, email, telefone, data_nasc, cidade, estado) VALUES ('$nome', '$email', '$telefone', '$data_nasc', '$cidade', '$estado', '$senha')");
     }
 ?>
 
@@ -31,11 +31,13 @@
     <title>Login</title>
 </head>
 <body>
-    <ul>
-        <li><a href="index.html#home">Home</a></li>
-    </ul>
+    <div class="retornar">
+        <ul>
+            <li><a href="index.php">Home</a></li>
+        </ul>
+    </div>
     <div class="box">
-        <form action="inserirCadastro.php" method="POST">
+        <form action="login.php" method="POST">
             <fieldset>
                 <legend>Login</legend>
                 <div class="inputBox">

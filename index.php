@@ -33,9 +33,9 @@
             <div class="banner">
                 <h1>Bem-vindo ao Jogo <span style="color:aquamarine;">TIC-TAC-TOE</span></h1>
                 <p>Gabriel <span style="color:aqua;">Furquim</span> da Silva, Gustavo <span style="color:aqua;">Lipinski</span><br> e <span style="color:aqua;">Vini</span>cius Vicenzo Padilha.</p>
-                <a href="jogar.html" class="menu-link"><button>Jogar sem Login</button></a>
+                <a href="jogar.php" class="menu-link"><button>Jogar sem Login</button></a>
                 <a href="login.php" class="menu-link"><button>Login</button></a>
-                <a href="formulario.php" class="menu-link"><button>Cadastro</button></a>
+                <a href="inserirCadastro.php" class="menu-link"><button>Cadastro</button></a>
             </div>
         </header>
         <!----------Menu Lateral---------->

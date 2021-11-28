@@ -1,3 +1,20 @@
+<?php
+
+    if(isset($_POST['submit'])){
+
+        include_once('config.php');
+
+        $nome = $_POST['nome'];
+        $email = $_POST['email'];
+        $telefone = $_POST['telefone'];
+        $data_nasc = $_POST['data'];
+        $cidade = $_POST['cidade'];
+        $estado = $_POST['estado'];
+        $senha = $_POST['senha'];
+
+        $result = mysqli_query($conexao, "INSERT INTO usuarios(nome, email, telefone, data_nasc, cidade, estado, senha) VALUES ('$nome', '$email', '$telefone', '$data_nasc', '$cidade', '$estado', '$senha')");
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -12,7 +29,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/mavefavicon.png">
     <link rel="manifest" href="/site.webmanifest">
-    <title>Pedra, papel e tesoura</title>
+    <title>JOGAR!!</title>
 </head>
 <body>
     <div class="retornar">
@@ -45,7 +62,7 @@
     </div>
         <!----------Rodapé---------->
         <footer>
-            <div class="footer-content">
+            <div class="footer-content" style="position:fixed; width:100%; height:70px; background-color: #17181b;; padding:5px; bottom:0px; ">
                 <p>Copyright &copy; 2021, Team Mavericks - Copia não comédia!</p>
             </div>
         </footer>
@@ -79,7 +96,7 @@
             ganhador=1
         }
         else if(jogador_escolha == 2 && computador_escolha == 1){
-            ganhador=1
+            ganhador=1;
         }
         else if(jogador_escolha == 2 && computador_escolha == 2){
             ganhador=0
@@ -112,7 +129,7 @@
         }
         else if(ganhador == 1){
             document.getElementById("mensagens").innerHTML = 'Jogador Ganhou'
-            jogadorPontuacao++
+            jogadorPontuacao++;
         }
         else if(ganhador == 2){
             document.getElementById("mensagens").innerHTML = 'Computador Ganhou'
