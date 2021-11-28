@@ -155,8 +155,8 @@ header{
 }
 .banner{
     position: absolute;
-    top: 30%;
-    left: 15%;
+    top: 2%;
+    left: 2%;
 }
 .banner h1{
     color: #ffffff;
@@ -177,7 +177,6 @@ header{
     margin-bottom: 2rem;
     animation:  moveBanner 1s 0.7s forwards;
     opacity: 0;
-    text-align: justify;
 }
 .banner button{
     font-family: var(--font-action);
@@ -192,7 +191,7 @@ header{
     border-radius: 5px;
     cursor: pointer;
     animation:  moveBanner 1s 0.9s forwards;
-    opacity: 0;
+    opacity: 0; 
 }
 @keyframes moveBanner{
     0%{
@@ -423,4 +422,59 @@ ul#jogador_escolha li a img, ul#computador_escolha li a img{
     opacity: 0;
 }
 
+.retornar button{
+    font-family: var(--font-action);
+    color: #fff;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    background: #159957;  
+    background: -webkit-linear-gradient(to right, #155799, #159957);  
+    background: linear-gradient(to left, #155799, #159957); 
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    animation:  moveBanner 1s 0.9s forwards;
+    opacity: 0;
+}
 
+.banner2{
+    position: absolute;
+    top: 2%;
+    left: 2%;
+}
+.banner2 h1{
+    color: #ffffff;
+    font-size: 3.5rem;
+    font-family: var(--font-primary);
+    font-weight: 200;
+    text-shadow: .2rem .3rem 2px rgba(0, 0, 0, .4);
+    line-height: 3.5rem;
+    margin-bottom: 2rem;
+    animation:  moveBanner 1s 0.5s forwards;
+    opacity: 0;
+}
+.banner2 p{
+    font-family: var(--font-secundary);
+    color: #fff;
+    font-size: 2rem;
+    text-shadow: .2rem .2rem rgba(0, 0, 0, .4);
+    margin-bottom: 2rem;
+    animation:  moveBanner 1s 0.7s forwards;
+    opacity: 0;
+}
+.banner2 button{
+    font-family: var(--font-action);
+    color: #fff;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    background: #159957;  
+    background: -webkit-linear-gradient(to right, #155799, #159957);  
+    background: linear-gradient(to left, #155799, #159957); 
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    animation:  moveBanner 1s 0.9s forwards;
+    opacity: 0; 
+}

@@ -40,7 +40,7 @@
             <fieldset>
                 <legend>Cadastro de usuário</legend>
                 <br><br>
-                <div class="inputBox">
+                <div class="inputBox" >
                     <input type="text" name="nome" id="nome" class="input_user" required>
                     <label for="name" class="label_input">Nome completo</label>
                 </div>

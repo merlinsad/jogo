@@ -37,7 +37,7 @@
         </ul>
     </div>
     <div class="box">
-        <form action="login.php" method="POST">
+        <form method="post" action="ope.php" id="formlogin" name="formlogin">
             <fieldset>
                 <legend>Login</legend>
                 <div class="inputBox">
@@ -46,11 +46,11 @@
                 </div>
                 <br><br>
                 <div class="inputBox">
-                    <input type="text" name="senha" id="senha" class="input_user" required>
+                    <input type="password" name="senha" id="senha" class="input_user" required>
                     <label for="senha" class="label_input">Senha</label>
                 </div>
                 <br><br>
-                <input type="submit" name="submit" id="submit">
+                <input type="submit" name="submit" id="submit" a href="jogar.php">
                 <br><br>
             </fieldset>
         </form>

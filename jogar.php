@@ -14,6 +14,11 @@
 
         $result = mysqli_query($conexao, "INSERT INTO usuarios(nome, email, telefone, data_nasc, cidade, estado, senha) VALUES ('$nome', '$email', '$telefone', '$data_nasc', '$cidade', '$estado', '$senha')");
     }
+        session_start();
+    if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true))
+    {
+    header('location:index.php');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
