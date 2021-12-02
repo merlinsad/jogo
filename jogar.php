@@ -1,24 +1,16 @@
 <?php
-
-    if(isset($_POST['submit'])){
-
-        include_once('config.php');
-
-        $nome = $_POST['nome'];
-        $email = $_POST['email'];
-        $telefone = $_POST['telefone'];
-        $data_nasc = $_POST['data'];
-        $cidade = $_POST['cidade'];
-        $estado = $_POST['estado'];
-        $senha = $_POST['senha'];
-
-        $result = mysqli_query($conexao, "INSERT INTO usuarios(nome, email, telefone, data_nasc, cidade, estado, senha) VALUES ('$nome', '$email', '$telefone', '$data_nasc', '$cidade', '$estado', '$senha')");
-    }
-        session_start();
-    if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true))
+    session_start();
+    include_once('config.php');
+    // print_r($_SESSION);
+    if((!isset($_SESSION['usuario']) == true) and (!isset($_SESSION['senha']) == true))
     {
-    header('location:index.php');
+        unset($_SESSION['usuario']);
+        unset($_SESSION['senha']);
+        header('Location: login.php');
     }
+    $logado = $_SESSION['usuario'];
+    $sql = "SELECT * FROM usuarios ORDER BY id DESC";
+    $result = $conexao->query($sql);
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -35,7 +27,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="img/mavefavicon.png">
     <link rel="manifest" href="/site.webmanifest">
     <title>JOGAR!!</title>
+
 </head>
+
 <body>
     <div class="retornar">
         <a href="index.php" class="menu-link"><button>Retornar</button></a>
@@ -44,7 +38,7 @@
         <h1 id="titulo"><span style="color:black;">TIC-TAC-TOE</span></h1>
         <div id="placar">
             <div id="jogador">
-                <h2 id="jogador_nome">Gabriel</h2>
+                <h2 id="jogador_nome"><?php echo "<h2><u>$logado</u></h>"; ?><br></h2>
                 <span id="jogador_pontos">0</span>
                 <ul id="jogador_escolha">
                     <li><a id="jogador_escolha_1" onclick="jogar(1)"><img src="img/pedra-removebg-preview.png"></a></li>
@@ -54,7 +48,7 @@
             </div>
             <div id="versus"><h1 id="oponente">VS</h1></div>
                 <div id="computador">
-                    <h2 id="computador_nome">Computador</h2>
+                    <h id="computador_nome">Computador</h1>
                     <span id="computador_pontos">0</span>
                     <ul id="computador_escolha">
                         <li><a id="computador_escolha_1"><img src="img/pedra-removebg-preview.png"></a></li>

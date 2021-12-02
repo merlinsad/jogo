@@ -11,8 +11,10 @@
         $cidade = $_POST['cidade'];
         $estado = $_POST['estado'];
         $senha = $_POST['senha'];
+        $usuario = $_POST['usuario'];
 
-        $result = mysqli_query($conexao, "INSERT INTO usuarios(nome, email, telefone, data_nasc, cidade, estado, senha) VALUES ('$nome', '$email', '$telefone', '$data_nasc', '$cidade', '$estado', '$senha')");
+        $sql = "INSERT INTO usuarios(nome, email, telefone, data_nasc, cidade, estado, senha, usuario) VALUES ('".$nome."', '".$email."', '".$telefone."', '".$data_nasc."', '".$cidade."', '".$estado."', '".$senha."', '".$usuario."')";
+        $result = mysqli_query($conexao, $sql);
     }
 ?>
 
@@ -41,8 +43,13 @@
                 <legend>Cadastro de usuário</legend>
                 <br><br>
                 <div class="inputBox" >
+                    <input type="text" name="usuario" id="usuario" class="input_user" required>
+                    <label for="usuario" class="label_input">Usuario</label>
+                </div>
+                <br><br>
+                <div class="inputBox" >
                     <input type="text" name="nome" id="nome" class="input_user" required>
-                    <label for="name" class="label_input">Nome completo</label>
+                    <label for="nome" class="label_input">Nome completo</label>
                 </div>
                 <br><br>
                 <div class="inputBox">

@@ -421,3 +421,24 @@ ul#jogador_escolha li a img, ul#computador_escolha li a img{
     animation:  moveBanner 1s 0.9s forwards;
     opacity: 0;
 }
+
+.tabelaRank table{
+    position:absolute;
+    top: 35%;
+    left: 40%
+
+}
+
+.inputBox{
+    position:absolute;
+    top: 45%
+}
+
+.mensagens h1 {
+    left: 50%;
+}
+
+#escolha { 
+    margin: 0 auto;
+    width: 50%
+}

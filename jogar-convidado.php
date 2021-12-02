@@ -1,25 +1,24 @@
 <?php
-session_start();
-$usuario = $_POST['usuario'];
-$senha = $_POST['senha'];
-$con = mysqli_connect("localhost","root","", "formulario");
 
-$result = mysqli_query($con, "SELECT * FROM `usuarios` WHERE `usuario` = '$usuario' AND `SENHA`= '$senha'");
+    if(isset($_POST['submit'])){
 
-if(mysqli_num_rows ($result) > 0 )
-{
-$_SESSION['email'] = $login;
-$_SESSION['senha'] = $senha;
-header('location:jogar.php');
-}
-else{
-  unset ($_SESSION['email']);
-  unset ($_SESSION['senha']);
-  echo "<script type='text/javascript'>alert('Email ou senha errados, tente novamente');</script>";
-  header('login.php');
-  }
-?>
-<?php
+        include_once('config.php');
+
+        $nome = $_POST['nome'];
+        $email = $_POST['email'];
+        $telefone = $_POST['telefone'];
+        $data_nasc = $_POST['data'];
+        $cidade = $_POST['cidade'];
+        $estado = $_POST['estado'];
+        $senha = $_POST['senha'];
+
+        $result = mysqli_query($conexao, "INSERT INTO usuarios(nome, email, telefone, data_nasc, cidade, estado, senha) VALUES ('$nome', '$email', '$telefone', '$data_nasc', '$cidade', '$estado', '$senha')");
+    }
+        session_start();
+    if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['senha']) == true))
+    {
+    header('location:index.php');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -35,46 +34,43 @@ else{
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/mavefavicon.png">
     <link rel="manifest" href="/site.webmanifest">
-    <title>TIC-TAC-TOE</title>
+    <title>JOGAR!!</title>
+
 </head>
+
 <body>
-     <!----------Botão Lateral---------->
-     <div class="container">
-        <div class="hamburguer">
-            <div class="line" id="line1"></div>
-            <div class="line" id="line2"></div>
-            <div class="line" id="line3"></div>
-            <span>FECHAR</span>
-        </div>
-        <!----------Cabeçalho---------->
-        <header id="home">
-            <div class="img-wrapper">
-                <img src="img/pankaj-patel-u2Ru4QBXA5Q-unsplash.jpg" alt="">
-            </div>
-            <div class="banner">
-                <h1>Bem-vindo ao Jogo <span style="color:aquamarine;">TIC-TAC-TOE</span></h1>
-                <p>Gabriel <span style="color:aqua;">Furquim</span> da Silva, Gustavo <span style="color:aqua;">Lipinski</span><br> e <span style="color:aqua;">Vini</span>cius Vicenzo Padilha.</p>
-                <a href="login.php" class="menu-link"><button>Jogar com Login</button></a>
-                <a href="jogar.php" class="menu-link"><button>Jogar sem Login</button></a>
-                <a href="inserirCadastro.php" class="menu-link"><button>Cadastro</button></a>
-            </div>
-        </header>
-        <!----------Menu Lateral---------->
-        <div class="sidebar">
-            <nav>
-                <ul class="menu">
-                    <li class="menu-item"><a href="ranking.php" class="menu-link">Rank</a></li>
-                    <li class="menu-item"><a href="jogadores.php" class="menu-link">Jogadores</a></li>
-                    <li class="menu-item"><a href="alunos.php" class="menu-link">Alunos</a></li>
+    <div class="retornar">
+        <a href="index.php" class="menu-link"><button>Retornar</button></a>
+    </div>
+    <div id="principal">
+        <h1 id="titulo"><span style="color:black;">TIC-TAC-TOE</span></h1>
+        <div id="placar">
+            <div id="jogador">
+                <h2 id="jogador_nome">Convidado</h2>
+                <span id="jogador_pontos">0</span>
+                <ul id="jogador_escolha">
+                    <li><a id="jogador_escolha_1" onclick="jogar(1)"><img src="img/pedra-removebg-preview.png"></a></li>
+                    <li><a id="jogador_escolha_2" onclick="jogar(2)"><img src="img/papel-removebg-preview.png"></a></li>
+                    <li><a id="jogador_escolha_3" onclick="jogar(3)"><img src="img/tesoura-removebg-preview.png"></a></li>
                 </ul>
-            </nav>
-            <div class="social">
-                <img src="img/android-chrome-192x192.png" >
             </div>
+            <div id="versus"><h1 id="oponente">VS</h1></div>
+                <div id="computador">
+                    <h2 id="computador_nome">Computador</h2>
+                    <span id="computador_pontos">0</span>
+                    <ul id="computador_escolha">
+                        <li><a id="computador_escolha_1"><img src="img/pedra-removebg-preview.png"></a></li>
+                        <li><a id="computador_escolha_2"><img src="img/papel-removebg-preview.png"></a></li>
+                        <li><a id="computador_escolha_3"><img src="img/tesoura-removebg-preview.png"></a></li>
+                    </ul>
+                </div>
+        </div>
+        <div class="escolha">
+            <div id="mensagens"><h1>Faça sua escolha !</h1></div>
         </div>
         <!----------Rodapé---------->
         <footer>
-            <div class="footer-content">
+            <div class="footer-content" style="position:fixed; width:100%; height:70px; background-color: #17181b;; padding:5px; bottom:0px; ">
                 <p>Copyright &copy; 2021, Team Mavericks - Copia não comédia!</p>
             </div>
         </footer>
@@ -108,7 +104,7 @@ else{
             ganhador=1
         }
         else if(jogador_escolha == 2 && computador_escolha == 1){
-            ganhador=1
+            ganhador=1;
         }
         else if(jogador_escolha == 2 && computador_escolha == 2){
             ganhador=0
@@ -126,7 +122,7 @@ else{
             ganhador=0
         }
         
-        document.getElementById("jogador-escolha-1").classList.remove('selecionado')
+        /*document.getElementById("jogador-escolha-1").classList.remove('selecionado')
         document.getElementById("jogador-escolha-2").classList.remove('selecionado')
         document.getElementById("jogador-escolha-3").classList.remove('selecionado')
         document.getElementById("computador-escolha-1").classList.remove('selecionado')
@@ -134,14 +130,14 @@ else{
         document.getElementById("computador-escolha-3").classList.remove('selecionado')
 
         document.getElementById("jogador-escolha-" + jogador_escolha).classList.add('selecionado')
-        document.getElementById("computador-escolha-" + computador_escolha).classList.add('selecionado')
+        document.getElementById("computador-escolha-" + computador_escolha).classList.add('selecionado')*/
 
         if(ganhador == 0){
             document.getElementById("mensagens").innerHTML = 'Empate'
         }
         else if(ganhador == 1){
-            document.getElementById("mensagens").innerHTML = 'Jogador Ganhou'
-            jogadorPontuacao++
+            document.getElementById("mensagens").innerHTML = 'Convidado Ganhou'
+            jogadorPontuacao++;
         }
         else if(ganhador == 2){
             document.getElementById("mensagens").innerHTML = 'Computador Ganhou'

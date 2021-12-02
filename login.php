@@ -10,8 +10,11 @@
         $data_nasc = $_POST['data'];
         $cidade = $_POST['cidade'];
         $estado = $_POST['estado'];
+        $ranking = $_POST['ranking'];
 
-        $result = mysqli_query($conexao, "INSERT INTO usuarios(nome, email, telefone, data_nasc, cidade, estado) VALUES ('$nome', '$email', '$telefone', '$data_nasc', '$cidade', '$estado', '$senha')");
+        $result = mysqli_query($conexao, "INSERT INTO usuarios(nome, email, telefone, data_nasc, cidade, estado) VALUES ('$nome', '$email', '$telefone', '$data_nasc', '$cidade', '$estado', '$senha', '$usuario')");
+        $user = mysqli_query($conexao, "SELECT nome from usuarios WHERE email = $email");
+        $rank = mysqli_query($conexao, "INSERT INTO usuarios(ranking) VALUES ('Novato')");
     }
 ?>
 
@@ -37,12 +40,12 @@
         </ul>
     </div>
     <div class="box">
-        <form method="post" action="ope.php" id="formlogin" name="formlogin">
+        <form method="post" action="testLogin.php" id="formlogin" name="formlogin">
             <fieldset>
                 <legend>Login</legend>
                 <div class="inputBox">
-                    <input type="text" name="email" id="email" class="input_user" required>
-                    <label for="email" class="label_input">E-mail</label>
+                    <input type="text" name="usuario" id="usuario" class="input_user" required>
+                    <label for="usuario" class="label_input">Usuario</label>
                 </div>
                 <br><br>
                 <div class="inputBox">
@@ -50,8 +53,9 @@
                     <label for="senha" class="label_input">Senha</label>
                 </div>
                 <br><br>
-                <input type="submit" name="submit" id="submit" a href="jogar.p">
+                <input type="submit" name="submit" id="submit" a href="jogar.php" value="Logar">
                 <br><br>
+                <button id="submit" onclick="window.location.href = 'inserirCadastro.php'" value="Cadastrar-se">Cadastrar-se</button> 
             </fieldset>
         </form>
     </div>

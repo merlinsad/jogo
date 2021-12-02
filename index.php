@@ -34,7 +34,7 @@
                 <h1>Bem-vindo ao Jogo <span style="color:aquamarine;">TIC-TAC-TOE</span></h1>
                 <p>Gabriel <span style="color:aqua;">Furquim</span> da Silva, Gustavo <span style="color:aqua;">Lipinski</span><br> e <span style="color:aqua;">Vini</span>cius Vicenzo Padilha.</p>
                 <a href="login.php" class="menu-link"><button>Jogar com Login</button></a>
-                <a href="jogar.php" class="menu-link"><button>Jogar sem Login</button></a>
+                <a href="jogar-convidado.php" class="menu-link"><button>Jogar sem Login</button></a>
                 <a href="inserirCadastro.php" class="menu-link"><button>Cadastro</button></a>
             </div>
         </header>
@@ -42,8 +42,7 @@
         <div class="sidebar">
             <nav>
                 <ul class="menu">
-                    <li class="menu-item"><a href="ranking.html" class="menu-link">Rank</a></li>
-                    <li class="menu-item"><a href="jogadores.html" class="menu-link">Jogadores</a></li>
+                    <li class="menu-item"><a href="ranking.php" class="menu-link">Rank</a></li>
                     <li class="menu-item"><a href="alunos.php" class="menu-link">Alunos</a></li>
                 </ul>
             </nav>
@@ -61,7 +60,7 @@
 </body>
 <script src="script.js"></script>
 <script>
-
+    
     var jogador_escolha=0
     var jogadorPontuacao=0
     var computador_escolha=0
