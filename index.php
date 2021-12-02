@@ -36,6 +36,8 @@
                 <a href="login.php" class="menu-link"><button>Jogar com Login</button></a>
                 <a href="jogar-convidado.php" class="menu-link"><button>Jogar sem Login</button></a>
                 <a href="inserirCadastro.php" class="menu-link"><button>Cadastro</button></a>
+                <br>
+                <a href="jogar.php" class="menu-link"><button> Voltar ao jogo..</button></a>
             </div>
         </header>
         <!----------Menu Lateral---------->

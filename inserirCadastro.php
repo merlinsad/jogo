@@ -82,8 +82,10 @@
                     <label for="senha" class="label_input">Senha</label>
                 </div>
                 <br><br>
-                <input type="submit" name="submit" id="submit">
+                <input type="submit" name="submit" id="submit" value="Cadastrar">
                 <br><br>
+                <h4>Já possui cadastro?<br>Clique em baixo para se logar!</h4>
+                <button id="submit" onclick="window.location.href = 'login.php'" value="Cadastrar-se">Login</button> 
             </fieldset>
         </form>
     </div>
