@@ -12,8 +12,10 @@
         $estado = $_POST['estado'];
         $senha = $_POST['senha'];
         $usuario = $_POST['usuario'];
+        $ranking = $_POST['ranking'];
+        
 
-        $sql = "INSERT INTO usuarios(nome, email, telefone, data_nasc, cidade, estado, senha, usuario) VALUES ('".$nome."', '".$email."', '".$telefone."', '".$data_nasc."', '".$cidade."', '".$estado."', '".$senha."', '".$usuario."')";
+        $sql = "INSERT INTO usuarios(nome, email, telefone, data_nasc, cidade, estado, senha, usuario, ranking ) VALUES ('".$nome."', '".$email."', '".$telefone."', '".$data_nasc."', '".$cidade."', '".$estado."', '".$senha."', '".$usuario."', '".$ranking."')";
         $result = mysqli_query($conexao, $sql);
     }
 ?>
@@ -45,6 +47,11 @@
                 <div class="inputBox" >
                     <input type="text" name="usuario" id="usuario" class="input_user" required>
                     <label for="usuario" class="label_input">Usuario</label>
+                </div>
+                <br><br>
+                <div class="inputBox" >
+                    <input type="text" name="ranking" id="ranking" class="input_user" required>
+                    <label for="nome" class="label_input">Novato ou Novata?</label>
                 </div>
                 <br><br>
                 <div class="inputBox" >
