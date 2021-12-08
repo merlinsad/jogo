@@ -23,7 +23,7 @@
         {
             $_SESSION['usuario'] = $usuario;
             $_SESSION['senha'] = $senha;
-            header('Location: jogar.php');
+            header('Location: jogo.php');
         }
     }
     else

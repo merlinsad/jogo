@@ -13,8 +13,7 @@
         $senha = $_POST['senha'];
         $usuario = $_POST['usuario'];
         $ranking = $_POST['ranking'];
-        
-
+    
         $sql = "INSERT INTO usuarios(nome, email, telefone, data_nasc, cidade, estado, senha, usuario, ranking ) VALUES ('".$nome."', '".$email."', '".$telefone."', '".$data_nasc."', '".$cidade."', '".$estado."', '".$senha."', '".$usuario."', '".$ranking."')";
         $result = mysqli_query($conexao, $sql);
     }
